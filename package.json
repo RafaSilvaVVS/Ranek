@@ -1,0 +1,23 @@
+{
+  "name": "ranek",
+  "version": "1.0.0",
+  "description": "Loja online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaSilva2k/Ranek.git"
+  },
+  "author": "Rafa Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaSilva2k/Ranek/issues"
+  },
+  "homepage": "https://github.com/RafaSilva2k/Ranek#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}

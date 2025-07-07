@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../../ranek/src/output.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuário</title>
+</head>
+
+<body>
+  <header class="bg-transparent px-5 py-5 flex justify-between">
+    <div>
+      <a href="../../../ranek/index.html">
+        <img class="w-[80px]" src="../../../ranek/src/ranekLogo.svg" alt="Logo ranek">
+      </a>
+    </div>
+    <div>
+      <a class="bg-[#8877ff] px-4 py-3 text-white uppercase rounded-[6px]" href=" #">Vender / Login</a>
+    </div>
+    </div>
+  </header>
+
+  <main class="grid px-5 grid-cols-[auto] md:grid-cols-[auto_1fr] my-18 mx-auto md:justify-center max-w-[700px] gap-8">
+    <ul class="md:place-self-end max-w-[700px] md:self-start ">
+      <li><a class="bg-[#f7f7f7] my-2 block  px-8 py-2 text-[#333] rounded-[6px]" href="./produtos.html">Produtos</a></li>
+      <li><a class="bg-[#f7f7f7] my-2 block px-8 py-2 text-[#333] rounded-[6px]" href="./compras.html">Compras</a></li>
+      <li><a class="bg-[#8877ff] my-2 block px-8 py-2 text-[#f7f7f7] rounded-[6px]" href="./vendas.html">Vendas</a></li>
+      <li><a class="bg-[#f7f7f7] my-2 block px-8 py-2 text-[#333] rounded-[6px]" href="./editar.html">Editar usuário</a></li>
+      <li><a data-logout class="bg-[#f8f8f8] my-2 block px-8 py-2 text-[#333] rounded-[6px]" href="#">Deslogar</a></li>
+    </ul>
+    <div class="my-2">
+      <h1 class="text-[#333] text-3xl">Vendas</h1>
+      <div class="grid grid-cols-[200px_200px] gap-3" data-vendas>
+
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../../src/scripts/script.js"></script>
+</body>
+
+</html>

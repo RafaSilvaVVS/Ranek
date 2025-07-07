@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../src/output.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranek</title>
+</head>
+
+<body>
+  <header class="bg-transparent px-5 py-5 flex justify-between">
+    <div>
+      <a href="../../ranek/index.html">
+        <img class="w-[80px]" src="../src/ranekLogo.svg" alt="Logo ranek">
+      </a>
+    </div>
+    <div>
+      <a class="bg-[#8877ff] px-4 py-3 text-white uppercase rounded-[8px]" href=" #">Vender / Login</a>
+    </div>
+  </header>
+
+  <main class="px-5 mb-5">
+    <div data-main>
+    </div>
+    <div>
+      <div data-comprar>
+        <a data-btn-comprar="true" class="my-8 inline-block bg-[#8877ff] px-8 py-2 rounded-[4px] text-white" href="#">Comprar</a>
+      </div>
+      <form data-form class="mb-2 hidden max-w-[500px] *:grid *:items-center *:grid-cols-[60px_1fr]" action="post" method="post">
+        <div class="my-8">
+          <label class="inline-block" for="nome">Nome</label>
+          <input data-dados="nome" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="nome" id="nome">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="email">Email</label>
+          <input data-dados="email" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="email" name="email" id="email">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="senha">Senha</label>
+          <input data-dados="senha" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="password" name="senha" id="senha">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="cep">Cep</label>
+          <input data-dados="cep" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="cep" id="cep">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="rua">Rua</label>
+          <input data-dados="rua" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="rua" id="rua">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="numero">Numero</label>
+          <input data-dados="numero" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="numero" id="numero">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="bairro">Bairro</label>
+          <input data-dados="bairro" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="bairro" id="bairro">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="cidade">Cidade</label>
+          <input data-dados="cidade" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="cidade" id="cidade">
+        </div>
+        <div class="my-8">
+          <label class="inline-block" for="estado">Estado</label>
+          <input data-dados="estado" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="estado" id="estado">
+          <div data-finalizar class="col-start-2 mt-4 bg-[#e80] px-4 py-2 text-white uppercase rounded-[5px] place-self-start grid col-end-2">
+            <a href="#">Finalizar compra</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+  </main>
+</body>
+<script type="module" src="../src/scripts/script.js"></script>
+
+</html>

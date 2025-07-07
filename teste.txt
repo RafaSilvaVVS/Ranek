@@ -1,0 +1,57 @@
+import endpoints from "../endpointsRequisicao/endpoints.js";
+import getPesquisaProduto from "./getPesquisaProduto.js";
+console.log(getPesquisaProduto());
+function getProdutos() {
+  const main = document.querySelector("[data-main]");
+  const rrayProdutos = getPesquisaProduto();
+
+  async function fetchProduto() {
+    this.arrayProdutos = await endpoints("produto");
+    this.arrayProdutos.forEach((produto) => {
+      const objetoDadosProduto = {
+        img: produto.fotos[0].src,
+        nome: produto.nome,
+        preco: produto.preco,
+        descricao: produto.descricao,
+      };
+      criarHtmlDoProduto(objetoDadosProduto);
+    });
+  }
+
+  function criarHtmlDoProduto(objetoDados) {
+    const DivContainer = document.createElement("div");
+    DivContainer.classList.add(
+      "shadow-2xl",
+      "px-4",
+      "py-6",
+      "rounded-2xl",
+      "hover:cursor-pointer",
+      "hover:scale-120"
+    );
+    const img = document.createElement("img");
+    img.setAttribute("src", objetoDados.img);
+
+    const nome = document.createElement("h2");
+    nome.innerText = objetoDados.nome;
+    nome.classList.add("text-[#333]", "text-2xl", "mt-2");
+
+    const preco = document.createElement("p");
+    preco.innerText = objetoDados.preco;
+    preco.classList.add("text-[#e80]", "bold", "text-[20px]");
+    const descricao = document.createElement("p");
+    descricao.classList.add("mt-2");
+    descricao.innerText = objetoDados.descricao;
+    DivContainer.appendChild(img);
+    DivContainer.appendChild(nome);
+    DivContainer.appendChild(preco);
+    DivContainer.appendChild(descricao);
+
+    this.main.appendChild(DivContainer);
+  }
+
+  async function init() {
+    await this.fetchProduto();
+  }
+}
+
+export default getProdutos;

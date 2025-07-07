@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../src/output.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranek</title>
+</head>
+
+<body>
+  <header class="bg-transparent px-5 py-5 flex justify-between">
+    <div>
+      <a href="../../ranek/index.html">
+        <img class="w-[80px]" src="../src/ranekLogo.svg" alt="Logo ranek">
+      </a>
+    </div>
+    <div>
+      <a class="bg-[#8877ff] px-4 py-3 text-white uppercase rounded-[6px]" href=" #">Vender / Login</a>
+    </div>
+    </div>
+  </header>
+  <main class="my-18">
+    <h1 class="text-[#8877ff] my-6 text-center text-4xl md:text-5xl">Login</h1>
+    <form data-form-login class=" max-w-[500px] mx-auto" action="post" method="post">
+      <label for="email">Email</label>
+      <input class="shadow-2xl focus:outline-2 focus:outline-[#8877ff] rounded-[6px] w-[100%] my-3 px-4 py-2 block" type="email" name="email" id="email">
+      <label for="password">Senha</label>
+      <input class="shadow-2xl focus:outline-2 focus:outline-[#8877ff] rounded-[6px] w-[100%] my-3 px-4 py-2 block" type="password" name="password" id="password">
+      <div>
+        <span data-erro-login class="text-red-700"></span>
+      </div>
+      <div data-btn-login class="my-6 cursor-pointer mx-auto text-center rounded-[5px] bg-[#8877ff] px-4 py-2 text-white max-w-[300px]">
+        <a class="uppercase  " href="#">Entrar</a>
+      </div>
+    </form>
+    <span class="text-[#333] text-center block">Perdeu a senha clique <a href="#" class="text-[#8877ff] ">aqui</a></span>
+    <h1 class="md:text-4xl text-center my-6 text-4xl text-[#333]">Crie sua conta</h1>
+    <div data-btn-comprar="true" class="my-6 cursor-pointer mx-auto block text-center rounded-[5px] bg-[#8877ff] px-4 py-2 text-white max-w-[300px]">
+      <a class="uppercase" href="#">Criar conta</a>
+    </div>
+    <form data-form name="criar" class="mb-2 hidden max-w-[500px] mx-auto *:grid *:items-center *:grid-cols-[70px_1fr]" action="post" method="post">
+      <div class="my-8">
+        <label class="inline-block" for="nome">Nome</label>
+        <input class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="nome" id="nome">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="email">Email</label>
+        <input class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="email" name="email" id="email">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="senha">Senha</label>
+        <input class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="password" name="senha" id="senha">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="cep">Cep</label>
+        <input data-change-cep class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="cep" id="cep">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="rua">Rua</label>
+        <input data-cep class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="rua" id="rua">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="numero">Numero</label>
+        <input  class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="numero" id="numero">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="bairro">Bairro</label>
+        <input data-cep="" class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="bairro" id="bairro">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="cidade">Cidade</label>
+        <input data-cep class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="cidade" id="cidade">
+      </div>
+      <div class="my-8">
+        <label class="inline-block" for="estado">Estado</label>
+        <input data-cep class="shadow-2xl inline   w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="estado" id="estado">
+        <span class="my-2 text-red-700 block col-start-2 col-end-2" data-erro></span>
+        <div data-criar class="my-3 cursor-pointer col w-full col-start-2 col-end-2   *:text-center rounded-[5px] bg-[#8877ff] text-center px-4 py-2 text-white max-w-[500px]">
+          <a class="uppercase  " href="#">Criar</a>
+        </div>
+      </div>
+    </form>
+  </main>
+</body>
+<script type="module" src="../src/scripts/script.js"></script>
+
+</html>

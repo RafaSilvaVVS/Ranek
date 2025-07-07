@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../../ranek/src/output.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuário</title>
+</head>
+
+<body>
+  <header class="bg-transparent px-5 py-5 flex justify-between">
+    <div>
+      <a href="../../../ranek/index.html">
+        <img class="w-[80px]" src="../../../ranek/src/ranekLogo.svg" alt="Logo ranek">
+      </a>
+    </div>
+    <div>
+      <a class="bg-[#8877ff] px-4 py-3 text-white uppercase rounded-[6px]" href=" #">Vender / Login</a>
+    </div>
+    </div>
+  </header>
+
+  <main class="grid px-5 grid-cols-[auto] md:grid-cols-[auto_1fr] my-18 mx-auto justify-center max-w-[700px] gap-8">
+    <ul class="md:place-self-end my-6 md:my-0 md:self-start *">
+      <li><a class="bg-[#8877ff] my-2 block px-8 py-2 text-white rounded-[6px]" href="./produtos.html">Produtos</a></li>
+      <li><a class="bg-[#f7f7f7] my-2 block px-6 py-2 text-[#333] rounded-[6px]" href="./compras.html">Compras</a></li>
+      <li><a class="bg-[#f7f7f7] my-2 block px-6 py-2 text-[#333] rounded-[6px]" href="./vendas.html">Vendas</a></li>
+      <li><a class="bg-[#f7f7f7] my-2 block px-6 py-2 text-[#333] rounded-[6px]" href="./editar.html">Editar usuário</a></li>
+      <li><a data-logout class="bg-[#f8f8f8] my-2 block px-6 py-2 text-[#333] rounded-[6px]" href="#">Deslogar</a></li>
+    </ul>
+    <div class="my-2">
+      <h1 class="text-[#333] text-2xl  md:text-3xl">Adicionar Produto</h1>
+      <form class="*:grid  *:max-w-[550px] *:grid-cols-[90px_auto]" action="post" method="post">
+        <div class="my-8 max-w-[700px]">
+          <label class="inline-block text-[#333]" for="nome">Nome</label>
+          <input data-conteudo class="shadow-2xl block w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="nome" id="nome">
+        </div>
+        <div class="my-8 ">
+          <label class="inline-block text-[#333]" for="preco">Preco (R$)</label>
+          <input data-conteudo class="shadow-2xl block w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" type="text" name="preco" id="preco">
+        </div>
+        <div class="my-8 ">
+          <label class="inline-block text-[#333]" for="fotos">Fotos</label>
+          <input data-conteudo class="shadow-2xl block file:cursor-pointer file:bg-[#ccc] file:rounded-[6px] file:px-2 file:py-1 w-full focus:outline-[#8877ff] file:my-2 rouded-[6px]  py-2 px-4" type="file" name="fotos" id="fotos">
+        </div>
+        <div class="my-8 ">
+          <label class="inline-block text-[#333]" for="descricao">Descrição</label>
+          <textarea data-conteudo class="shadow-2xl block w-full focus:outline-[#8877ff] rouded-[6px]  py-2 px-4" name="descricao" id="descricao"></textarea>
+          <div data-btn-postar class="my-3 place-self-start  cursor-pointer  col-start-2 col-end-2   *:text-center rounded-[5px] bg-[#8877ff] text-center md:px-4 py-1 px-[3px] md:py-4 text-white max-w-[500px]">
+            <a class="uppercase  " href="#">Adicionar produto</a>
+          </div>
+        </div>
+      </form>
+      <h1 class="text-[#333] text-3xl">Seus produtos</h1>
+    </div>
+  </main>
+
+  <script type="module" src="../../../ranek/src/scripts/script.js"></script>
+</body>
+
+</html>
