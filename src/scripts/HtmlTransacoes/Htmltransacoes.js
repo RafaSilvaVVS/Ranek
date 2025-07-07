@@ -5,6 +5,8 @@ class HTMLtransacao {
 
   setar(elemento) {
     this.dataHtml?.appendChild(elemento);
+
+    return this.dataHtml
   }
 
   criarImagem(src) {
