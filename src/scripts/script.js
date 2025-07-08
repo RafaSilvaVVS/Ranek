@@ -16,7 +16,7 @@ import logout from "./logout.js";
 logout();
 import Vendas from "./GET/vendas.js";
 
-const produtoUnicoInit = new produtoUnico();
+const produtoUnicoInit = new produtoUnico("[data-btn-comprar]");
 produtoUnicoInit.init();
 
 const form = new FormularioAbrir("[data-form]", "[data-btn-comprar]");

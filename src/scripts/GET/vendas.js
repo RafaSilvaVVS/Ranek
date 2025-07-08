@@ -1,5 +1,6 @@
 import Requisicoes from "../endpointsRequisicao/endpoints.js";
 import HTMLtransacao from "../HtmlTransacoes/Htmltransacoes.js";
+import redirecionar from "../redirecionar/redirecionar.js";
 
 const getVendas = new Requisicoes();
 
@@ -10,6 +11,7 @@ class Vendas {
     const response = await getVendas.GetProdutos("transacao?tipo=vendedor_id");
     const arrayVendas = response.map(({ comprador_id, produto, endereco }) => {
       return {
+        id: produto.id,
         comprador_id,
         dados: {
           nome: produto.nome,
@@ -32,13 +34,11 @@ class Vendas {
   HTMLVendas(vendasDados) {
     vendasDados.forEach(({ comprador_id, dados, endereco }) => {
       const divElemento = document.createElement("div");
-      divElemento.setAttribute("data-elemento",'')
-      const elementoClick = document.querySelectorAll('[data-elemento]')
-      
-      divElemento.innerHTML = ``;
+
       const divEndereco2 = document.createElement("div");
       const divEndereco = document.createElement("div");
       const html = new HTMLtransacao("[data-vendas]");
+      const containerPai = html.setar(divElemento);
       if (dados.img) {
         html.criarImagem(dados.img);
       } else {
@@ -68,6 +68,14 @@ class Vendas {
       );
       html.setar(divEndereco);
       html.setar(divEndereco2);
+      const clickProduto = containerPai?.querySelectorAll("img");
+      const paginaProduto = new redirecionar();
+      clickProduto?.forEach((item, index) => {
+        clickProduto[index].addEventListener("click", () => {
+          window.localStorage.setItem("produto", vendasDados[index].id);
+          paginaProduto.Redirecionar("/ranek/pages/produto.html");
+        });
+      });
     });
   }
 

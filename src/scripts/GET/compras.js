@@ -30,14 +30,16 @@ class Compras {
       divElemento.append(html.criarElementos("span", "vendedor:", "#e80"));
       divElemento.append(html.criarElementos("span", item.vendedor_id));
       const containerPai = html.setar(divElemento);
-      const clickProduto = containerPai.querySelectorAll("img");
+      const clickProduto = containerPai?.querySelectorAll("img");
       const paginaProduto = new redirecionar();
-      clickProduto.forEach((item, index) => {
-        clickProduto[index].addEventListener("click", () => {
-          window.localStorage.setItem("produto", mapArray[index].id);
-          paginaProduto.Redirecionar("/ranek/pages/produto.html");
+      if (clickProduto) {
+        clickProduto.forEach((item, index) => {
+          clickProduto[index].addEventListener("click", () => {
+            window.localStorage.setItem("produto", mapArray[index].id);
+            paginaProduto.Redirecionar("/ranek/pages/produto.html");
+          });
         });
-      });
+      }
     });
   }
 
