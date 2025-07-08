@@ -25,7 +25,7 @@
     </div>
     <div>
       <div data-comprar>
-        <a data-btn-comprar="true" class="my-8 inline-block bg-[#8877ff] px-8 py-2 rounded-[4px] text-white" href="#">Comprar</a>
+        <button data-btn-comprar="true" class="my-8 disabled:bg-gray-300 disabled:text-[#333] inline-block bg-[#8877ff] px-8 py-2 rounded-[4px] text-white" href="#">Comprar</button>
       </div>
       <form data-form class="mb-2 hidden max-w-[500px] *:grid *:items-center *:grid-cols-[60px_1fr]" action="post" method="post">
         <div class="my-8">
@@ -63,9 +63,9 @@
         <div class="my-8">
           <label class="inline-block" for="estado">Estado</label>
           <input data-dados="estado" class="shadow-2xl inline   w-full focus:outline-[#8877ff]   py-2 px-4" type="text" name="estado" id="estado">
-          <div data-finalizar class="col-start-2 mt-4 bg-[#e80] px-4 py-2 text-white uppercase rounded-[5px] place-self-start grid col-end-2">
-            <a href="#">Finalizar compra</a>
-          </div>
+          <button data-finalizar class="col-start-2  mt-4 bg-[#e80] px-4 py-2 text-white uppercase rounded-[5px] place-self-start grid col-end-2">
+            Finalizar compra</a>
+          </button>
         </div>
       </form>
     </div>

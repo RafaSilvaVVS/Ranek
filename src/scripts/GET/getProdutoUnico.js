@@ -2,13 +2,19 @@ import Requisicoes from "../endpointsRequisicao/endpoints.js";
 import htmlProdutos from "../HTMLProdutos/HTMLProdutos.js";
 const getProduto = new Requisicoes();
 class produtoUnico {
-  constructor() {}
+  constructor(dataFinalizar) {
+    this.dataFinalizar = document.querySelector(dataFinalizar);
+  }
   async fetch() {
     const nomeProduto = window.localStorage.getItem("produto");
     if (nomeProduto !== null) {
       const response = await getProduto.GetProdutos(`produto/${nomeProduto}`);
       htmlProdutos(response);
       console.log(response);
+      if (response.vendido) {
+        this.dataFinalizar.disabled = true;
+        this.dataFinalizar.innerText = "produto vendido";
+      }
     }
   }
 
