@@ -1,3 +1,5 @@
+import Fomatar from "../formatarMoeda/formatarMoeda.js";
+
 class HTMLtransacao {
   constructor(dataHtml) {
     this.dataHtml = document.querySelector(dataHtml);
@@ -6,7 +8,7 @@ class HTMLtransacao {
   setar(elemento) {
     this.dataHtml?.appendChild(elemento);
 
-    return this.dataHtml
+    return this.dataHtml;
   }
 
   criarImagem(src) {
@@ -22,11 +24,18 @@ class HTMLtransacao {
     if (elemento.tagName == "H3") {
       elemento.classList.add("text-2xl", "text-[#333]", classe);
     }
+    if (isNaN(+texto) == false) {
+      console.log(+texto);
+      const numeroPtbr = new Fomatar();
+      elemento.innerText = numeroPtbr.formatar(+texto);
+    } else {
+      elemento.innerText = texto;
+    }
     elemento.classList.add(`text-[${classe}]`);
     if (elemento.tagName == "SPAN") {
       elemento.classList.add("text-[#333]", "mx-1");
     }
-    elemento.innerText = texto;
+
     return elemento;
   }
 }

@@ -1,6 +1,7 @@
 const main = document.querySelector("[data-main]");
 const formulario = document.querySelector("[data-form]");
 const dataComprar = document.querySelector("[data-comprar]");
+import Fomatar from "../formatarMoeda/formatarMoeda.js";
 
 export default function htmlProdutos(objProdutos) {
   if (Array.isArray(objProdutos) == false) {
@@ -35,7 +36,8 @@ function htmlElementosUnico(produto) {
   const nomeElemento = criarElementos("p", produto.nome);
   nomeElemento.classList.add("text-[#333]", "text-2xl", "mt-2");
 
-  const precoElemento = criarElementos("p", produto.preco);
+  const moedaPTBR = new Fomatar();
+  const precoElemento = criarElementos("p", moedaPTBR.formatar(produto.preco));
   precoElemento.classList.add("text-[#e80]", "bold", "text-[20px]");
 
   const descricaoElemento = criarElementos("p", produto.descricao);
@@ -87,8 +89,8 @@ function conteudoElementos(produto) {
 
       const nomeElemento = criarElementos("p", nome);
       nomeElemento.classList.add("text-[#333]", "text-2xl", "mt-2");
-
-      const precoElemento = criarElementos("p", preco);
+      const precoPTBR = new Fomatar();
+      const precoElemento = criarElementos("p", precoPTBR.formatar(preco));
       precoElemento.classList.add("text-[#e80]", "bold", "text-[20px]");
 
       const descricaoElemento = criarElementos("p", descricao);
