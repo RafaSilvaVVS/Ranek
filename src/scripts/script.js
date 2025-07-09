@@ -15,6 +15,14 @@ import Compras from "./GET/compras.js";
 import logout from "./logout.js";
 logout();
 import Vendas from "./GET/vendas.js";
+import validarToken from "./POST/validarToken.js";
+import Linkbotao from "./linkBotao.js";
+
+const btnLink = new Linkbotao("[data-btn-link]");
+btnLink.init();
+
+const validar = new validarToken();
+validar.init();
 
 const produtoUnicoInit = new produtoUnico("[data-btn-comprar]");
 produtoUnicoInit.init();
