@@ -34,7 +34,6 @@ class Vendas {
   HTMLVendas(vendasDados) {
     vendasDados.forEach(({ comprador_id, dados, endereco }) => {
       const divElemento = document.createElement("div");
-
       const divEndereco2 = document.createElement("div");
       const divEndereco = document.createElement("div");
       const html = new HTMLtransacao("[data-vendas]");
