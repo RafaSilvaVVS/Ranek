@@ -15,7 +15,7 @@ class Compras {
         dados: {
           nome: produto.nome,
           preco: produto.preco,
-          img: produto.fotos[0].src,
+          img: produto.fotos ? produto.fotos[0].src : '',
         },
       };
     });

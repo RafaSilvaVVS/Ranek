@@ -10,10 +10,12 @@ class produtoUnico {
     if (nomeProduto !== null) {
       const response = await getProduto.GetProdutos(`produto/${nomeProduto}`);
       htmlProdutos(response);
-      console.log(response);
-      if (response.vendido) {
+      if (response.vendido == "true") {
         this.dataFinalizar.disabled = true;
         this.dataFinalizar.innerText = "produto vendido";
+      } else {
+        this.dataFinalizar.disabled = false;
+        this.dataFinalizar.innerText = "COMPRAR";
       }
     }
   }
