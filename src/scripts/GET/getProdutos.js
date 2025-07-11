@@ -7,7 +7,11 @@ let arrayProdutos;
 export default async function fetchProduto(array) {
   if (window.location.href === "http://127.0.0.1:5500/ranek/index.html") {
     arrayProdutos = await getProdutos.GetProdutos("produto");
-    htmlProdutos(arrayProdutos);
+    if (array !== undefined) {
+      htmlProdutos(array);
+    } else {
+      htmlProdutos(arrayProdutos);
+    }
     console.log(arrayProdutos);
 
     if (

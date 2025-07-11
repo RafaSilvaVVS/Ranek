@@ -21,8 +21,16 @@ function htmlElementosUnico(produto) {
   if (main !== null) {
     main.innerHTML = ``;
   }
-  console.log(produto);
+  main.innerHTML = ``;
   const divProduto = document.createElement("a");
+  divProduto.classList.add(
+    "shadow-2xl",
+    "px-4",
+    "py-6",
+    "rounded-2xl",
+    "hover:cursor-pointer",
+    "hover:scale-120"
+  );
   if (window.location.pathname == "/ranek/pages/produto.html") {
     divProduto.classList.add("grid", "grid-cols-2", "gap-8");
   } else {
@@ -63,6 +71,7 @@ function htmlElementosUnico(produto) {
 }
 
 function conteudoElementos(produto) {
+  main.innerHTML = "";
   if (Array.isArray(produto)) {
     produto.map(({ fotos, preco, nome, descricao, id }) => {
       const linkProduto = document.createElement("a");
