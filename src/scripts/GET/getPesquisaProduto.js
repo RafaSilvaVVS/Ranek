@@ -10,6 +10,7 @@ export default function getPesquisaProduto() {
       `produto/${valorPesquisa}`
     );
     arrayProdutos = produtosPesquisa;
+    console.log(arrayProdutos);
     fetchProduto(produtosPesquisa);
   }
   function init() {
