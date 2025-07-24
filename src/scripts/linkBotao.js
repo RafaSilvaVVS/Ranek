@@ -4,9 +4,9 @@ class Linkbotao {
   }
 
   init() {
-    if (window.localStorage.getItem("token")) {
+    if (window.localStorage.getItem('token')) {
     } else {
-      this.btn.setAttribute("href", "../../../ranek/pages/Login.html");
+      this.btn.setAttribute('href', '../../../ranek/pages/Login.html');
     }
   }
 }

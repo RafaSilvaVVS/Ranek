@@ -1,10 +1,10 @@
-import Requisicoes from "../endpointsRequisicao/endpoints.js";
-import POSTusuario from "./criarUsuario.js";
+import Requisicoes from '../endpointsRequisicao/endpoints.js';
+import POSTusuario from './criarUsuario.js';
 const fazerCompra = new Requisicoes();
 const postUsuario = new POSTusuario(
-  "[data-form]",
-  "[data-criar]",
-  "[data-erro]"
+  '[data-form]',
+  '[data-criar]',
+  '[data-erro]',
 );
 
 class Transacao {
@@ -19,7 +19,13 @@ class Transacao {
     postUsuario.pegarDadosForm(event);
   }
 
-  async FazerTransacao() {
+  async FazerTransacao(e) {
+    e.preventDefault();
+    const respo = new Requisicoes();
+    const pr = await respo.GetProdutos(
+      'produto/' + window.localStorage.getItem('produto'),
+    );
+    console.log(pr);
     const endereco = {
       cep: this.dados[3].value,
       rua: this.dados[4].value,
@@ -29,27 +35,21 @@ class Transacao {
       estado: this.dados[8].value,
     };
     const corpo = {
-      produto: window.localStorage.getItem("produto"),
+      produto: pr,
       comprador_id: this.dados[1].value,
-      vendedor_id: "lobo@origamid.com",
+      vendedor_id: 'lobo@origamid.com',
       endereco,
     };
-    console.log(corpo);
     const response = await fetch(
-      "https://ranekapi.origamid.dev/json/api/transacao",
+      'https://ranekapi.origamid.dev/json/api/transacao',
       {
-        method: "POST",
-        "Access-Control-Allow-Origin": "*",
+        method: 'POST',
         headers: {
-          Authorization: "Bearer " + window.localStorage.getItem("token"),
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + window.localStorage.getItem('token'),
         },
-        body: JSON.stringify({
-          produto: "smartphone-2",
-          comprador_id: "devgame@gmail.com",
-          vendedor_id: "lobo@origamid.com",
-          endereco: endereco,
-        }),
-      }
+        body: JSON.stringify(corpo),
+      },
     );
     const dados = await response.json();
 
@@ -57,10 +57,10 @@ class Transacao {
   }
 
   Init() {
-    this.btnTransacao?.addEventListener("click", (event) => {
+    this.btnTransacao?.addEventListener('click', (event) => {
       this.FazerTransacao(event);
     });
-    this.formulario?.addEventListener("change", (event) => {
+    this.formulario?.addEventListener('change', (event) => {
       this.pegarDadosUsuario(event);
     });
   }

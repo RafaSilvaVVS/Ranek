@@ -8,7 +8,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-700: oklch(50.5% 0.213 27.518);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -273,9 +272,6 @@
   .max-w-\[700px\] {
     max-width: 700px;
   }
-  .max-w-\[800px\] {
-    max-width: 800px;
-  }
   .max-w-\[950px\] {
     max-width: 950px;
   }
@@ -296,9 +292,6 @@
   }
   .justify-between {
     justify-content: space-between;
-  }
-  .justify-center {
-    justify-content: center;
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -417,9 +410,6 @@
   .text-\[\#f7f7f7\] {
     color: #f7f7f7;
   }
-  .text-\[\#fb7\] {
-    color: #fb7;
-  }
   .text-red-700 {
     color: var(--color-red-700);
   }
@@ -447,11 +437,6 @@
   .\*\:max-w-\[550px\] {
     :is(& > *) {
       max-width: 550px;
-    }
-  }
-  .\*\:max-w-\[750px\] {
-    :is(& > *) {
-      max-width: 750px;
     }
   }
   .\*\:grid-cols-\[60px_1fr\] {

@@ -1,4 +1,4 @@
-import Redirecionar from "../redirecionar/Redirecionar.js";
+import Redirecionar from '../redirecionar/Redirecionar.js';
 
 class FazerLogin {
   constructor(formulario, btnLogin, dataErro) {
@@ -14,8 +14,8 @@ class FazerLogin {
     console.log(this.dados);
   }
   limparFormulario(formulario) {
-    formulario.elements[0].value = "";
-    formulario.elements[1].value = "";
+    formulario.elements[0].value = '';
+    formulario.elements[1].value = '';
   }
 
   async FazerLoginUsuarioAutomatico(dadosLogin) {
@@ -25,33 +25,34 @@ class FazerLogin {
     };
 
     const response = await fetch(
-      "https://ranekapi.origamid.dev/json/jwt-auth/v1/token",
+      'https://ranekapi.origamid.dev/json/jwt-auth/v1/token',
       {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(corpo),
-      }
+      },
     );
     const dados = await response.json();
+    console.log(dados);
     if (!!dados.token) {
-      window.localStorage.setItem("token", dados.token);
+      window.localStorage.setItem('token', dados.token);
       const redirecionarPagina = new Redirecionar();
-      redirecionarPagina.Redirecionar(
-        "../../../ranek/pages/conta/produtos.html"
-      );
+      // redirecionarPagina.Redirecionar(
+      //   '../../../ranek/pages/conta/produtos.html',
+      // );
     } else
       this.dataErro.innerText = dados.message
-        .replace("<strong>", "")
-        .replace("</strong>", "");
+        .replace('<strong>', '')
+        .replace('</strong>', '');
   }
 
   init() {
-    this.formulario?.addEventListener("change", (event) => {
+    this.formulario?.addEventListener('change', (event) => {
       this.PegarDadosFormulario(event);
     });
-    this.btnLogin?.addEventListener("click", (event) => {
+    this.btnLogin?.addEventListener('click', (event) => {
       this.FazerLoginUsuarioAutomatico();
       this.limparFormulario(this.formulario);
     });

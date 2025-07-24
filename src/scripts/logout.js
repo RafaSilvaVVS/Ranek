@@ -1,13 +1,13 @@
-import Redirecionar from "./redirecionar/Redirecionar.js";
+import Redirecionar from './redirecionar/Redirecionar.js';
 const redirecionarLogout = new Redirecionar();
 
 function logout() {
-  const logoutBtn = document.querySelectorAll("[data-logout]");
+  const logoutBtn = document.querySelectorAll('[data-logout]');
   logoutBtn.forEach((item) => {
-    item.addEventListener("click", (event) => {
+    item.addEventListener('click', (event) => {
       event.preventDefault();
-      window.localStorage.removeItem("token");
-      redirecionarLogout.Redirecionar("/ranek/pages/login.html");
+      window.localStorage.removeItem('token');
+      redirecionarLogout.Redirecionar('/ranek/pages/login.html');
     });
   });
 }
