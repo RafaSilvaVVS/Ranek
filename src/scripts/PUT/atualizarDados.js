@@ -1,4 +1,4 @@
-import requisicoes from "../endpointsRequisicao/endpoints.js";
+import requisicoes from '../endpointsRequisicao/endpoints.js';
 
 class AtualizarDados {
   constructor(btnAtualizar, formulario) {
@@ -8,7 +8,6 @@ class AtualizarDados {
   }
 
   async atualizar() {
-    console.log(this.formulario);
     this.dados = {
       nome: this.formulario[0]?.value,
       email: this.formulario[1]?.value,
@@ -21,13 +20,12 @@ class AtualizarDados {
       estado: this.formulario[8]?.value,
     };
 
-    console.log(this.dados);
     const Put = new requisicoes();
-    const response = await Put.PUT("usuario", this.dados);
+    const response = await Put.PUT('usuario', this.dados);
   }
 
   init() {
-    this.btnAtualizar?.addEventListener("click", () => {
+    this.btnAtualizar?.addEventListener('click', () => {
       this.atualizar();
     });
   }

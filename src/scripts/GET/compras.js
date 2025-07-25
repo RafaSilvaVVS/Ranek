@@ -8,9 +8,7 @@ class Compras {
 
   async GetCompras() {
     const response = await Get.GetProdutos('transacao?tipo=comprador_id');
-    console.log(response);
     const mapArray = response.map(({ vendedor_id, produto }) => {
-      console.log(produto);
       return {
         vendedor_id,
         id: produto.id,
@@ -22,7 +20,6 @@ class Compras {
       };
     });
 
-    console.log(response);
     mapArray.forEach((item) => {
       const divElemento = document.createElement('div');
       const html = new HTMLtransacao('[data-compras]');

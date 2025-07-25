@@ -6,11 +6,10 @@ class FetchCep {
 
   async RequisisaoCep() {
     const response = await fetch(
-      `https://viacep.com.br/ws/${this.changeCep.value}/json/`
+      `https://viacep.com.br/ws/${this.changeCep.value}/json/`,
     );
     const dados = await response.json();
 
-    console.log(dados);
     const { logradouro, localidade, bairro, estado } = dados;
     this.inputCep[0].value = logradouro;
     this.inputCep[1].value = localidade;
@@ -19,7 +18,7 @@ class FetchCep {
   }
 
   Init() {
-    this.changeCep?.addEventListener("change", () => {
+    this.changeCep?.addEventListener('change', () => {
       this.RequisisaoCep();
     });
   }
