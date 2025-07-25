@@ -10,7 +10,6 @@ export default function getPesquisaProduto() {
       `produto?_limit=10&q=${valorPesquisa}`,
     );
     arrayProdutos = produtosPesquisa;
-    console.log(arrayProdutos);
     fetchProduto(produtosPesquisa);
   }
   function init() {

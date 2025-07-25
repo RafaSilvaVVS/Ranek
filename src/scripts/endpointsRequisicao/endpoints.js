@@ -28,7 +28,6 @@ class Requisicoes {
   }
 
   async Post(endpoint, corpo) {
-    console.log(corpo);
     const response = await fetch(
       `https://ranekapi.origamid.dev/json/api/${endpoint}`,
       {

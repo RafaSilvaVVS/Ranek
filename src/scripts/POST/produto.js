@@ -1,4 +1,4 @@
-import Requisicoes from "../endpointsRequisicao/endpoints.js";
+import Requisicoes from '../endpointsRequisicao/endpoints.js';
 const postProduto = new Requisicoes();
 
 class Postar {
@@ -15,12 +15,11 @@ class Postar {
       descricao: this.dados[3].value,
     };
 
-    const response = await postProduto.Post("produto", produto);
-    console.log(response);
+    const response = await postProduto.Post('produto', produto);
   }
 
   init() {
-    this.btnPostar?.addEventListener("click", (event) => {
+    this.btnPostar?.addEventListener('click', (event) => {
       event.preventDefault();
       this.Post();
     });

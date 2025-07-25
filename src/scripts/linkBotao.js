@@ -5,6 +5,7 @@ class Linkbotao {
 
   init() {
     if (window.localStorage.getItem('token')) {
+      this.btn.innerText = window.localStorage.getItem('username');
     } else {
       this.btn.setAttribute('href', '../../../ranek/pages/Login.html');
     }

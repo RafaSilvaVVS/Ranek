@@ -12,7 +12,6 @@ export default async function fetchProduto(array) {
     } else {
       htmlProdutos(arrayProdutos);
     }
-    console.log(arrayProdutos);
 
     if (
       window.location.href !== 'http://127.0.0.1:5500/ranek/pages/produto.html'

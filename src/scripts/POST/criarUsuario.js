@@ -34,9 +34,7 @@ class POSTusuario {
 
   async criarUsuario(event) {
     event.preventDefault();
-    console.log(this.dados);
     const response = await PostUsuario.Post(`usuario`, this.dados);
-    console.log(response);
     if (response.message) {
       if (!!this.mensagemDeErro) {
         this.mensagemDeErro.innerText = response.message;

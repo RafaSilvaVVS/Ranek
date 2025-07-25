@@ -25,7 +25,6 @@ class Transacao {
     const pr = await respo.GetProdutos(
       'produto/' + window.localStorage.getItem('produto'),
     );
-    console.log(pr);
     const endereco = {
       cep: this.dados[3].value,
       rua: this.dados[4].value,
@@ -52,8 +51,6 @@ class Transacao {
       },
     );
     const dados = await response.json();
-
-    console.log(dados);
   }
 
   Init() {

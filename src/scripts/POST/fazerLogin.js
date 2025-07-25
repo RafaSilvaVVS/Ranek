@@ -1,4 +1,4 @@
-import Redirecionar from '../redirecionar/Redirecionar.js';
+import Redirecionar from '../redirecionar/redirecionar.js';
 
 class FazerLogin {
   constructor(formulario, btnLogin, dataErro) {
@@ -35,9 +35,9 @@ class FazerLogin {
       },
     );
     const dados = await response.json();
-    console.log(dados);
     if (!!dados.token) {
       window.localStorage.setItem('token', dados.token);
+      window.localStorage.setItem('username', dados.user_display_name);
       const redirecionarPagina = new Redirecionar();
       redirecionarPagina.Redirecionar(
         '../../../ranek/pages/conta/produtos.html',
