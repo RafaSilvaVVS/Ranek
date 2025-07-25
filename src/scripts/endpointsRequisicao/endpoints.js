@@ -1,14 +1,14 @@
 class Requisicoes {
   constructor() {
-    const token = window.localStorage.getItem("token");
+    const token = window.localStorage.getItem('token');
     if (token) {
       this.header = {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + token,
       };
     } else {
       this.header = {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       };
     }
   }
@@ -18,9 +18,9 @@ class Requisicoes {
     response = await fetch(
       `https://ranekapi.origamid.dev/json/api/${endpoint}`,
       {
-        method: "GET",
+        method: 'GET',
         headers: this.header,
-      }
+      },
     );
 
     const dados = await response.json();
@@ -28,15 +28,14 @@ class Requisicoes {
   }
 
   async Post(endpoint, corpo) {
-    console.log(this.header);
     console.log(corpo);
     const response = await fetch(
       `https://ranekapi.origamid.dev/json/api/${endpoint}`,
       {
-        method: "POST",
+        method: 'POST',
         headers: this.header,
         body: JSON.stringify(corpo),
-      }
+      },
     );
     const dados = await response.json();
 
@@ -47,10 +46,10 @@ class Requisicoes {
     const response = await fetch(
       `https://ranekapi.origamid.dev/json/api/${endpoint}`,
       {
-        method: "PUT",
+        method: 'PUT',
         headers: this.header,
         body: JSON.stringify(corpo),
-      }
+      },
     );
     const dados = await response.json();
 

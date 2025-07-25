@@ -1,5 +1,5 @@
-import Requisicoes from "../endpointsRequisicao/endpoints.js";
-import endpoints from "../endpointsRequisicao/endpoints.js";
+import Requisicoes from '../endpointsRequisicao/endpoints.js';
+import endpoints from '../endpointsRequisicao/endpoints.js';
 const getDados = new Requisicoes();
 export let dados;
 class DadosUsuario {
@@ -8,15 +8,15 @@ class DadosUsuario {
   }
 
   async DadosGet() {
-    const token = window.localStorage.getItem("token");
-    const response = await getDados.GetProdutos("usuario", token);
+    const token = window.localStorage.getItem('token');
+    const response = await getDados.GetProdutos('usuario', token);
     this.dadosElement.forEach((item) => {
       item.value = response[item.dataset.dados];
     });
   }
 
   Init() {
-    if (localStorage.getItem("token")) this.DadosGet();
+    if (localStorage.getItem('token')) this.DadosGet();
   }
 }
 

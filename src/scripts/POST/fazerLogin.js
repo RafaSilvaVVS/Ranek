@@ -39,9 +39,9 @@ class FazerLogin {
     if (!!dados.token) {
       window.localStorage.setItem('token', dados.token);
       const redirecionarPagina = new Redirecionar();
-      // redirecionarPagina.Redirecionar(
-      //   '../../../ranek/pages/conta/produtos.html',
-      // );
+      redirecionarPagina.Redirecionar(
+        '../../../ranek/pages/conta/produtos.html',
+      );
     } else
       this.dataErro.innerText = dados.message
         .replace('<strong>', '')
